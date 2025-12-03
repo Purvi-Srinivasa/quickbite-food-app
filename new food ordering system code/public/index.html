@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Food Ordering System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="nav-left">
+      <div class="logo">QuickBite</div>
+      <div class="location-box">
+        <input
+          type="text"
+          id="location-input"
+          placeholder="Search for area, street name..."
+        />
+      </div>
+    </div>
+    <nav class="nav-right">
+  <a href="/login.html" class="nav-link">Log in</a>
+  <a href="/signup.html" class="nav-link highlight">Sign up</a>
+</nav>
+
+  </header>
+
+  <!-- Hero / Banner -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Discover the best food & drinks near you</h1>
+      <div class="search-box">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search for restaurant, cuisine or a dish"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Filters -->
+  <section class="filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="delivery">Delivery</button>
+    <button class="filter-btn" data-filter="dining">Dining Out</button>
+    <button class="filter-btn" data-filter="cafe">Cafes</button>
+  </section>
+
+  <!-- Restaurant list -->
+  <main class="restaurant-section">
+    <h2>Popular restaurants around you</h2>
+    <div class="restaurant-list" id="restaurant-list">
+      <!-- Cards will be injected by JS -->
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>Made with love.Delivered with care.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

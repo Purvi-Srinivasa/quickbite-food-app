@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Order successful</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-left"><div class="logo">QuickBite</div></div>
+    <nav class="nav-right"><a href="/index.html" class="nav-link">Home</a></nav>
+  </header>
+
+  <main style="display:flex;align-items:center;justify-content:center;min-height:60vh;padding:20px;">
+    <div style="background:#fff;padding:24px;border-radius:12px;box-shadow:0 6px 24px rgba(0,0,0,0.06);text-align:center;max-width:560px;">
+      <h1 style="margin:6px 0 8px;">Order placed successfully 🎉</h1>
+      <p style="color:#666;margin-bottom:12px;">Thanks — your order is being prepared.</p>
+      <p>Order ID: <strong id="order-id">—</strong></p>
+      <a href="/index.html"><button style="margin-top:16px;padding:10px 14px;border-radius:8px;border:none;background:#e23744;color:#fff;cursor:pointer;">Back to Home</button></a>
+    </div>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const orderId = params.get("orderId") || "N/A";
+    document.getElementById("order-id").textContent = orderId;
+  </script>
+</body>
+</html>

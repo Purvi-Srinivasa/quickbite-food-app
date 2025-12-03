@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign up | QuickBite</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-left">
+      <div class="logo">QuickBite</div>
+    </div>
+    <nav class="nav-right">
+      <a href="/login.html" class="nav-link">Log in</a>
+      <a href="/signup.html" class="nav-link highlight">Sign up</a>
+    </nav>
+  </header>
+
+  <main class="auth-page">
+    <div class="auth-card">
+      <h1 class="auth-title">Create your account</h1>
+      <p class="auth-subtitle">Join QuickBite and start discovering great food.</p>
+
+      <form id="signup-form" class="auth-form">
+        <div class="auth-input-group">
+          <label class="auth-label" for="signup-name">Full Name</label>
+          <input
+            type="text"
+            id="signup-name"
+            class="auth-input"
+            placeholder="Your name"
+            required
+          />
+        </div>
+
+        <div class="auth-input-group">
+          <label class="auth-label" for="signup-email">Email</label>
+          <input
+            type="email"
+            id="signup-email"
+            class="auth-input"
+            placeholder="you@example.com"
+            required
+          />
+        </div>
+
+        <div class="auth-input-group">
+          <label class="auth-label" for="signup-password">Password</label>
+          <input
+            type="password"
+            id="signup-password"
+            class="auth-input"
+            placeholder="Create a password"
+            required
+          />
+        </div>
+
+        <button type="submit" class="auth-btn" id="signup-btn">Create account</button>
+
+        <div id="signup-message"></div>
+      </form>
+
+      <p class="auth-footer-text">
+        Already have an account?
+        <a href="/login.html">Log in</a>
+      </p>
+    </div>
+  </main>
+
+  <script>
+    const signupForm = document.getElementById("signup-form");
+    const signupBtn = document.getElementById("signup-btn");
+    const signupMessage = document.getElementById("signup-message");
+
+    signupForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      signupMessage.textContent = "";
+      signupMessage.className = "";
+      signupBtn.disabled = true;
+
+      const name = document.getElementById("signup-name").value.trim();
+      const email = document.getElementById("signup-email").value.trim();
+      const password = document.getElementById("signup-password").value.trim();
+
+      try {
+        const res = await fetch("/api/signup", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email, password }),
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) {
+          signupMessage.textContent = data.message || "Signup failed.";
+          signupMessage.className = "auth-error";
+        } else {
+          signupMessage.textContent = "Account created! Redirecting to login...";
+          signupMessage.className = "auth-success";
+          setTimeout(() => {
+            window.location.href = "/login.html";
+          }, 1200);
+        }
+      } catch (err) {
+        console.error(err);
+        signupMessage.textContent = "Something went wrong. Please try again.";
+        signupMessage.className = "auth-error";
+      } finally {
+        signupBtn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

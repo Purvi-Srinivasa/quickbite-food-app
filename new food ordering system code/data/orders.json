@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1764752868352,
+    "userId": null,
+    "restaurantId": 6,
+    "items": [
+      {
+        "name": "Sushi Zen - Sample Item",
+        "qty": 1,
+        "price": 100
+      }
+    ],
+    "total": 100,
+    "status": "placed",
+    "placedAt": "2025-12-03T09:07:48.352Z"
+  }
+]
