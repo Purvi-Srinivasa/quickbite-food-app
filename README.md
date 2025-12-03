@@ -49,6 +49,15 @@ It’s perfect as a full-stack starter project for learning:
 - **Storage:** JSON files (`restaurants.json`, `users.json`, `orders.json`)
 
 ---
+## 👩‍💻 **Authors**
+
+**This project was created by:**
+
+- **Purvi Srinivas**  
+- **Pallavi U**  
+- **Priyanka K S**  
+- **Prajna P Naik**
+
 
 ## 📂 Project Structure
 
@@ -70,10 +79,3 @@ project-root/
     └── script.js          # Frontend logic (restaurants, filters, order flow)
 
 
-👩‍💻 Authors
-This project was created by:
-
-Purvi Srinivas
-Pallavi U
-Priyanka K S
-Prajna P Naik
