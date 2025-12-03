@@ -61,6 +61,7 @@ project-root/
     ├── style.css          # All styles (layout, auth, toast, etc.)
     └── script.js          # Frontend logic (restaurants, filters, order flow)
 
+---
 
 ## 👩‍💻 **Authors**
 
@@ -70,3 +71,5 @@ project-root/
 - **Pallavi U**  
 - **Priyanka K S**  
 - **Prajna P Naik**
+
+
