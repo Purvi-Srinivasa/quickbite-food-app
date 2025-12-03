@@ -60,3 +60,13 @@ project-root/
     ├── order-success.html # Order success page
     ├── style.css          # All styles (layout, auth, toast, etc.)
     └── script.js          # Frontend logic (restaurants, filters, order flow)
+
+
+## 👩‍💻 **Authors**
+
+**This project was created by:**
+
+- **Purvi Srinivas**  
+- **Pallavi U**  
+- **Priyanka K S**  
+- **Prajna P Naik**
